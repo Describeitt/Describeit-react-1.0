@@ -10,6 +10,7 @@
     padding:2rem;
     width:30vw;
     height:100%;
+    text-align: justify;
 }
 .formside{
     width:70vw;
@@ -81,6 +82,11 @@ i{
     color:white;
     position: absolute;
     right:30px;
+}
+@media  screen and (max-height:500px) {
+    .formdesc{
+        display:none;
+    }
 }
 @media  screen and (max-width:750px) {
     .formdesc{
