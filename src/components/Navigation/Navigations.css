@@ -1,0 +1,106 @@
+.Navigations-container{
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    
+
+}
+.blur{
+    width:100vw;
+    height:100vh;
+    backdrop-filter: blur(7px) saturate(169%);
+    -webkit-backdrop-filter: blur(7px) saturate(169%);
+    background-color: rgba(42, 48, 59, 0.53);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+   position:absolute;
+   z-index: 1001;
+   top:0;
+   left:0;
+}
+.basic-form-modal{
+    position:absolute;
+    width:90vw;
+    height:90vh;
+    z-index:999;
+    top:15px;
+    left:20px;
+}
+.copyrightm{
+    margin-top:0px;
+    margin-bottom:0px;
+    text-align: center;
+    color:white;
+}
+.Navi-title{
+    font-family: "Poppins", sans-serif;
+    color:rgb(56, 228, 176);
+    text-decoration: underline dashed rgb(219, 219, 109);
+    font-size: 25px;
+}
+h3{
+    text-align: center;
+    color: white;
+    font-family: Roboto,Verdana;
+}
+.Navi-IT{
+    background-color: rgb(236, 24, 95);
+    padding:0.4rem;
+    border-radius: 3px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    
+}
+.Navi-basic{
+    width:15rem;
+    height:3rem;
+    color: white;
+    background-color: transparent;
+    border-color: #9DAAF2;
+    border-width: 4px;
+    border-radius: 3px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+}
+
+.Navi-advanced{
+    width:15rem;
+    height:3rem;
+    color:white;
+    background-color: transparent;
+    border-color: #9DAAF2;
+    border-width: 4px;
+    border-radius: 3px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+}
+.Navi-generate{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+.Navi-gen-btn{
+    width:8rem;
+    height:2rem;
+    color:white;
+    background-color: transparent;
+    border-color: #9DAAF2;
+    border-width: 2px;
+    border-radius: 3px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+}
+.Navi-clear-btn{
+    width:8rem;
+    height:2rem;
+    color:white;
+    background-color: transparent;
+    border-color: #9DAAF2;
+    border-width: 2px;
+    border-radius: 3px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+}

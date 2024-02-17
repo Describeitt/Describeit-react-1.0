@@ -1,0 +1,21 @@
+.BasicForm-container{
+    display: flex;
+    flex-direction: row;
+    height:100%;
+    background-color: #1A2238;
+}
+.formsideb{
+    width:70vw;
+    padding:2rem;
+    overflow-y: scroll;
+}
+
+@media  screen and (max-width:750px) {
+    .formdesc{
+        display:none;
+    }
+    .formside{
+        width:100%;
+    }
+    
+}

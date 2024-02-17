@@ -1,0 +1,12 @@
+
+
+.copy{
+    position: absolute;
+    top:4px;
+    right:10px;
+    color: white;
+    background-color: rgb(236, 5, 82);
+    border-radius: 2px;
+    width:3rem;
+    height:2rem;
+}
