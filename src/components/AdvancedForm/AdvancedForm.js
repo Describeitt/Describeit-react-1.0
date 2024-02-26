@@ -25,10 +25,10 @@ function AdvancedForm({onGenerate}) {
 
     return (
         <div className='AdvancedForm-container'>
-            <div className='formdesc'>
+            {/* <div className='formdesc'>
                 <h2 className='Advanced-form-desct'>Advanced Description Generation</h2>
                 <p className='Advanced-form-descp'>Fill up the form on the right side to generate advanced descriptions. Use the keyboard to search through the dropbox if required. The clarity of information that you provide help us to generate more detailed descriptions.</p>
-            </div>
+            </div> */}
             <div className='formside'>
                 <i><IoClose onClick={onGenerate} size="45px"/></i>
                 <h2 className='Advanced-form-title'>Advanced Generation Requirements</h2>

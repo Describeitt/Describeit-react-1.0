@@ -1,19 +1,20 @@
 .AdvancedForm-container{
     display: flex;
     flex-direction: row;
-    height:100%;
+    height:80%;
     background-color: #1A2238;
 
 }
 .formdesc{
     box-sizing: border-box;
     padding:2rem;
-    width:30vw;
+    width:auto;
     height:100%;
     text-align: justify;
 }
 .formside{
-    width:70vw;
+    width:auto;
+    margin:0.5rem;
     overflow-y: scroll;
     padding:2rem;
 }

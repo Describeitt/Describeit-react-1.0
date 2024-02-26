@@ -1,11 +1,12 @@
 .BasicForm-container{
     display: flex;
     flex-direction: row;
-    height:100%;
+    height:80%;
     background-color: #1A2238;
+    margin:0.5rem;
 }
 .formsideb{
-    width:70vw;
+    width:auto;
     padding:2rem;
     overflow-y: scroll;
 }
