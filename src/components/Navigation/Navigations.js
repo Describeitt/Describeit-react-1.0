@@ -28,7 +28,6 @@ function Navigations( { textareaContent }) {
     
   };
   const toggleVisibilityAdvanced = () => {
-    
     setAdvancedFormVisibility(!advancedFormVisibility);
   };
 
@@ -47,8 +46,8 @@ function Navigations( { textareaContent }) {
       </div>
          {/*  <h3 className='Navi-title laptop'>Describe<span className='Navi-IT'>It</span></h3>
           <h3>Select Generation Type:</h3> */}
-          <div><button className='Navi-basic laptop' onClick={()=>{setBasicFormVisibility(!basicFormVisibility)}}>Basic</button></div>
-          <div><button className='Navi-advanced laptop' onClick={()=>setAdvancedFormVisibility(!advancedFormVisibility)}>Advanced</button></div>
+          <div><button className='Navi-basic laptop' onClick={()=>{setBasicFormVisibility(!basicFormVisibility);setAdvancedFormVisibility(false)}}>Basic</button></div>
+          <div><button className='Navi-advanced laptop' onClick={()=>{setAdvancedFormVisibility(!advancedFormVisibility);setBasicFormVisibility(false)}}>Advanced</button></div>
           <div>
           {advancedFormVisibility && 
       <div>

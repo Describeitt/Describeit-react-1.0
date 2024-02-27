@@ -1,8 +1,8 @@
 .BasicForm-container{
     display: flex;
     flex-direction: row;
-    height:80%;
-    background-color: #1A2238;
+    height:100%;
+    background-color: #ecf0f1;
     margin:0.5rem;
 }
 .formsideb{

@@ -30,11 +30,11 @@ function BasicForm({onGenerate}) {
             </div> */}
             <div className='formsideb'>
                 <i><IoClose size="45px" onClick={onGenerate}/></i>
-                <h2 className='Advanced-form-title'>Basic Generation Requirements</h2>
+                {/* <h2 className='Advanced-form-title'>Basic Generation Requirements</h2> */}
              <form onSubmit={handleSubmit(onSubmit)}>
             <div className='city-Dropdown'>
                 <label className='main' htmlFor='city'>1. Select the city where your property is present: </label>
-                <select {...register("city")}>
+                <select required {...register("city")}>
                     <option value="">Select City</option>
                     <option value="Acalanes Ridge">Acalanes Ridge</option>
                     <option value="Acton">Acton</option>
@@ -1163,19 +1163,19 @@ function BasicForm({onGenerate}) {
             </div>
             <div className='bedrooms'>
                 <label className='main' htmlFor='bedroom'>2. Select number of bedrooms your property have: </label>
-                <select {...register("bedroom")}>
+                <select required {...register("bedroom")}>
                     {Bedroomoptions}
                 </select>
             </div>
             <div className='bathrooms'>
                 <label className='main' htmlFor='bathroom'>3. Select number of bathrooms your property have: </label>
-                <select {...register("bathroom")}>
+                <select required {...register("bathroom")}>
                     {Bathroomoptions}
                 </select>
             </div>
             <div className='renovations'>
                 <label className='main' htmlFor='renovation'>4. Is the property renovated? </label>
-                <select {...register("renovation")}>
+                <select required {...register("renovation")}>
                 <option value="Select one">Select one</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>

@@ -1,8 +1,8 @@
 .AdvancedForm-container{
     display: flex;
     flex-direction: row;
-    height:80%;
-    background-color: #1A2238;
+    height:100%;
+    background-color: #ecf0f1;
 
 }
 .formdesc{
@@ -30,7 +30,7 @@
     font-family: Roboto,sans-serif;
 }
 .main{
-    color:white;
+    color:#2c3e50;
     font-family: Poppins,Verdana, Geneva, Tahoma, sans-serif;
     font-size:15px;
 }
@@ -44,7 +44,7 @@ select{
     width:80%;
     height:1.6rem;
     border: #9DAAF2 solid 5px;
-    color: blue;
+    color: gray;
     font-family: Roboto,Poppins,Verdana;
     margin:1rem;
 }
@@ -63,16 +63,17 @@ select{
     border: #9DAAF2 solid 5px;
 }
 .submit-btn{
-    width:40%;
-    height:3rem;
-    margin-left:auto;
-    margin-right:auto;
-    margin:1rem;
-    background-color: transparent;
-    color: white;
-    border: #FB8122 4px dashed;
-    font-family:Poppins,Verdana;
-    font-size:15px;
+    width:15rem;
+  height:3rem;
+  color: white;
+  background-color: #2c3e50;
+  border-color: #9DAAF2;
+  border-width: 4px;
+  border-radius: 3px;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .submitdiv{
     display: flex;
