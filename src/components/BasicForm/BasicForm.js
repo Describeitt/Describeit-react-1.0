@@ -6,9 +6,10 @@ import { IoClose } from "react-icons/io5";
 function BasicForm({onGenerate}) {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data =>{
-        console.log(data);
-        onGenerate();
+    const onSubmit = data => {
+        const generatedText = document.getElementById('generatedText');
+        const formDataString = JSON.stringify(data, null, 2);
+        generatedText.value = formDataString;
     }
     console.log(errors);
     const Bedroomoptions = [];

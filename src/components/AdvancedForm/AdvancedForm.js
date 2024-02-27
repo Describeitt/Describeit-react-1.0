@@ -7,8 +7,9 @@ function AdvancedForm({onGenerate}) {
         
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data);
-        onGenerate();
+        const generatedText = document.getElementById('generatedText');
+        const formDataString = JSON.stringify(data, null, 2);
+        generatedText.value = formDataString;
     }
 
     console.log(errors);
