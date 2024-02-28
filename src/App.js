@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import Navigations from './components/Navigation/Navigations';
 import Footer from './components/Footer/Footer';
 import UserDetail from './components/UserDetail/UserDetail';
+import { IoClose } from "react-icons/io5";
 
 function App() {
   const [opendet, setOpenDet] = useState(false)
@@ -28,7 +29,7 @@ function App() {
       {
         opendet && 
         <div className='blur'>
-          <UserDetail onSendGeneration={toggleOpenDet}/>
+          <UserDetail onSendGeneration={copyGenerated} onCloseButton={toggleOpenDet}/>
         </div>
       }
       <NavBar />
@@ -37,7 +38,7 @@ function App() {
         <div className='user-gen'>
           <Generations/>
           <div className='btn-div'>
-          <button className='Navi-gen-btn laptop' onClick={copyGenerated}>Copy</button>
+          <button className='Navi-gen-btn laptop' onClick={toggleOpenDet}>Copy</button>
           </div>
           </div>
       </div>

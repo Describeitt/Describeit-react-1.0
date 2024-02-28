@@ -1,20 +1,35 @@
-import React from 'react'
-import '../UserDetail/UserDetail.css'
+import React from 'react';
+import '../UserDetail/UserDetail.css';
+import { IoClose } from "react-icons/io5";
+import { useForm } from 'react-hook-form';
 
-function UserDetail({ onSendGeneration }) {
-    const handleSendGeneration = () => {
+
+function UserDetail({ onSendGeneration, onCloseButton }) {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+ 
+    const handleSendGeneration = (data) => {
+      console.log(data)
+       
         onSendGeneration();
-      };
-  return (
-    <div className="userdetail-container">
-        <div className="names">
-            <input className="namebox" type='textbox' placeholder='First Name'/>
-            <input className="namebox" type='textbox' placeholder='Last Name'/>
+    };
+
+    const closeModal = () => {
+        onCloseButton();
+    };
+
+    return (
+        <div className="userdetail-container">
+            <form onSubmit={handleSubmit(handleSendGeneration)}>
+                <i className="udclose"><IoClose onClick={closeModal} size="45px"/></i>
+                <div className="names">
+                    <input required {...register("firstName")} className="namebox" type='text' placeholder='First Name'/>
+                    <input required {...register("lastName")}className="namebox" type='text' placeholder='Last Name'/>
+                </div>
+                <div required className='email-div'><input className='emailbox' type="email" placeholder='Enter email'/></div>
+                <input {...register("emailToSend")} className='send-btn' type='submit' value='Send Generation'/>
+            </form>
         </div>
-        <div className='email-div'><input className='emailbox' type="email" placeholder='Enter email'/></div>
-        <input className='send-btn' type='submit' onClick={handleSendGeneration} value='Send Generation'/>
-    </div>
-  )
+    );
 }
 
-export default UserDetail
+export default UserDetail;

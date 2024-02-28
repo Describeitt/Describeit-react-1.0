@@ -3,8 +3,15 @@
     padding:3rem;
     display: flex;
     align-items: center;
+    position: relative;
     justify-content: center;
     flex-direction: column;
+}
+.udclose{
+    position: absolute;
+    top:0;
+    color:black;
+    right:0;
 }
 .namebox{
     margin:0px;
