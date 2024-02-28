@@ -17,7 +17,6 @@ function App() {
     if (textarea) {
       textarea.select();
       document.execCommand('copy');
-      console.log('Text copied to clipboard');
     }
     setOpenDet(!opendet)
   };

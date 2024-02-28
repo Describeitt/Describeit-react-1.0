@@ -7,8 +7,9 @@ function BasicForm({onGenerate}) {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
+        const prompt = "consider yourself a content generator. I am giving you a html  form's data in json form. create a beautiful description of the property based on it. I am directly going to publish your generation on my website. Here is your data -> \n"
         const generatedText = document.getElementById('generatedText');
-        const formDataString = JSON.stringify(data, null, 2);
+        const formDataString = prompt+JSON.stringify(data, null, 2);
         generatedText.value = formDataString;
     }
     console.log(errors);
@@ -1184,7 +1185,7 @@ function BasicForm({onGenerate}) {
             </div>
             <div className='other-basic'>
                 <label className='main' htmlFor='other-info'>5. Do you have anything to tell about the property?</label>
-                <div><textarea className='adtextarea' id='other-info' {...register("area1a", {})} /></div>
+                <div><textarea className='adtextarea' id='other-info' {...register("extra-description-of-the-property", {})} /></div>
             </div>
             <div className='submitdiv'>
             <input className='submit-btn' type="submit" value="Generate"/>
