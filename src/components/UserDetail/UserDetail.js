@@ -8,9 +8,9 @@ function UserDetail({ onSendGeneration, onCloseButton }) {
   const { register, handleSubmit, formState: { errors } } = useForm();
  
     const handleSendGeneration = (data) => {
-      console.log(data)
+      //console.log(data)
        
-        onSendGeneration();
+        onSendGeneration(data);
     };
 
     const closeModal = () => {
@@ -22,11 +22,11 @@ function UserDetail({ onSendGeneration, onCloseButton }) {
             <form onSubmit={handleSubmit(handleSendGeneration)}>
                 <i className="udclose"><IoClose onClick={closeModal} size="45px"/></i>
                 <div className="names">
-                    <input required {...register("firstName")} className="namebox" type='text' placeholder='First Name'/>
-                    <input required {...register("lastName")}className="namebox" type='text' placeholder='Last Name'/>
+                    <input required {...register("firstname")} className="namebox" type='text' placeholder='First Name'/>
+                    <input required {...register("lastname")}className="namebox" type='text' placeholder='Last Name'/>
                 </div>
-                <div required className='email-div'><input className='emailbox' type="email" placeholder='Enter email'/></div>
-                <input {...register("emailToSend")} className='send-btn' type='submit' value='Send Generation'/>
+                <div required className='email-div'><input {...register("email")} className='emailbox' type="email" placeholder='Enter email'/></div>
+                <input  className='send-btn' type='submit' value='Send Generation'/>
             </form>
         </div>
     );

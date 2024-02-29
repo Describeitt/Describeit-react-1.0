@@ -7,17 +7,32 @@ import Navigations from './components/Navigation/Navigations';
 import Footer from './components/Footer/Footer';
 import UserDetail from './components/UserDetail/UserDetail';
 import { IoClose } from "react-icons/io5";
+import axios from 'axios';
 
 function App() {
   const [opendet, setOpenDet] = useState(false)
   const [userDetail, setUserDetail]=useState({firstName:'', lastName:''})
   
-  const copyGenerated = () => {
+  const sendMail = async (data) =>{
+    //console.log(data)
+    try {
+      const response = await axios.post('https://describeitt.onrender.com/api/mailer/', data);
+      console.log(response.data); // Assuming the response is "ok"
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+  const copyGenerated = (data) => {
     const textarea = document.querySelector('#generatedText');
+    var prompts;
     if (textarea) {
+      prompts=textarea.value;
       textarea.select();
       document.execCommand('copy');
+      data['message']=prompts
+      sendMail(data)
     }
+    
     setOpenDet(!opendet)
   };
   const toggleOpenDet = () => {
