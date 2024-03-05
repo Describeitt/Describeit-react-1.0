@@ -8,11 +8,16 @@ import Footer from './components/Footer/Footer';
 import UserDetail from './components/UserDetail/UserDetail';
 import { IoClose } from "react-icons/io5";
 import axios from 'axios';
+import Spinner from './components/Spinner/Spinner';
 
 function App() {
   const [opendet, setOpenDet] = useState(false)
   const [userDetail, setUserDetail]=useState({firstName:'', lastName:''})
-  
+  const [loader,setLoader] = useState(false)
+
+  const setLoading = (value) =>{
+    setLoader(value)
+  }
   const sendMail = async (data) =>{
     //console.log(data)
     try {
@@ -48,15 +53,17 @@ function App() {
       }
       <NavBar />
       <div className='user-content'>
-        <div className='user-nav'><Navigations/></div>
+        <div className='user-nav'><Navigations onLoadingSpinnerSet={setLoading}/></div>
         <div className='user-gen'>
-          <Generations/>
+          {loader && <Spinner />}
+          {!loader && <Generations/>}
           <div className='btn-div'>
           <button className='Navi-gen-btn laptop' onClick={toggleOpenDet}>Copy</button>
           </div>
           </div>
       </div>
       <Footer />
+      
     </div>
   );
 }

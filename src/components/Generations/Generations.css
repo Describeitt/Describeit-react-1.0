@@ -10,3 +10,8 @@
     width:3rem;
     height:2rem;
 }
+.txtarea{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-color: transparent;
+}

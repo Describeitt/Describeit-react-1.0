@@ -4,7 +4,7 @@ import '../Navigation/Navigations.css'
 import BasicForm from '../BasicForm/BasicForm'
 import AdvancedForm from '../AdvancedForm/AdvancedForm'
 
-function Navigations( { textareaContent }) {
+function Navigations( { onLoadingSpinnerSet }) {
   const [basicFormVisibility, setBasicFormVisibility]=useState(false)
   const [advancedFormVisibility, setAdvancedFormVisibility]=useState(false)
   
@@ -52,14 +52,14 @@ function Navigations( { textareaContent }) {
           {advancedFormVisibility && 
       <div>
         <div className='basic-form-modal'>
-          <AdvancedForm onGenerate={toggleVisibilityAdvanced} className='basic-form-render'/>
+          <AdvancedForm onGenerate={onLoadingSpinnerSet} className='basic-form-render'/>
         </div>
       </div>
       }
       {basicFormVisibility &&
       <div>
         <div className='basic-form-modal'>
-        <BasicForm onGenerate={toggleVisibilityBasic} className='basic-form-render'/>
+        <BasicForm onGenerate={onLoadingSpinnerSet} className='basic-form-render'/>
       </div>
       </div>
       }

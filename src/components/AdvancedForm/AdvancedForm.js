@@ -3,25 +3,37 @@ import { useForm } from 'react-hook-form';
 import '../AdvancedForm/AdvancedForm.css'
 import { IoClose } from "react-icons/io5";
 import axios from 'axios';
+import { useState } from 'react';
+
 function AdvancedForm({onGenerate}) {
-        
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      const [disable,setDisable] = useState(false)
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = async (data) => {
+        setDisable(true)
         const prompt = "consider yourself a content generator. I am giving you a html  form's data in json form. create a beautiful description of the property based on it. I am directly going to publish your generation on my website. Do not add any extra amendities or features apart from the form data. Here is your data -> \n"
         const generatedText = document.getElementById('generatedText');
         generatedText.value = "Generating your Description ! ..."
         const formDataString = prompt+JSON.stringify(data, null, 2);
+        var response;
+        onGenerate(true);
         try {
-            const response = await axios.post('https://describeitt.onrender.com/api/describeit/', { "prompt":formDataString });
+            response = await axios.post('https://describeitt.onrender.com/api/describeit/', { "prompt":formDataString });
             generatedText.value=(response.data.result);
         } catch (error) {
-            generatedText.value=("error generating your description");
+            //generatedText.value=("error generating your description");
             console.error('Error:', error);
+        }finally{
+            onGenerate(false);
         }
+        await sleep(500);
+        const generatedTexts = document.getElementById('generatedText');
+        generatedTexts.value=(response.data.result);
+        setDisable(false)
         //generatedText.value = formDataString;
     }
-
-    console.log(errors);
     const Bedroomoptions = [];
     Bedroomoptions.push(<option value="none">Select one</option>)
     for (let index = 1; index <= 10; index++) {
@@ -1256,7 +1268,7 @@ function AdvancedForm({onGenerate}) {
                 <label className='main' htmlFor='poa'>14. Nearest points of attraction for your property:</label><br/><input id='poa' className='textboxs' type="text" {...register("Nearest points of interest", {})} />
             </div>
             <div className='submitdiv'>
-            <input className='submit-btn' type="submit" value='Generate'/>
+            <input disabled={disable} className='submit-btn' type="submit" value='Generate'/>
             </div>
             </form>
             </div>

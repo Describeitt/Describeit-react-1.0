@@ -2,26 +2,40 @@ import { useForm } from 'react-hook-form';
 import '../BasicForm/BasicForm.css';
 import { IoClose } from "react-icons/io5";
 import axios from 'axios';
+import { useState } from 'react';
 
 
 function BasicForm({onGenerate}) {
-
+    const [disable,setDisable] = useState(false)
     const { register, handleSubmit, formState: { errors } } = useForm();
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
     const onSubmit = async (data) => {
         const prompt = "consider yourself a content generator. I am giving you a html  form's data in json form. create a beautiful description of the property based on it. I am directly going to publish your generation on my website. Do not add any extra amendities or features apart from the form data. Here is your data -> \n"
         const generatedText = document.getElementById('generatedText');
         generatedText.value = "Generating your Description ! ..."
         const formDataString = prompt+JSON.stringify(data, null, 2);
+        onGenerate(true);
+        var response;
+        setDisable(true)
         try {
-            const response = await axios.post('https://describeitt.onrender.com/api/describeit/', { "prompt":formDataString });
-            generatedText.value=(response.data.result);
+            
+            var btn=document.getElementById("basic-generate")
+            response = await axios.post('https://describeitt.onrender.com/api/describeit/', { "prompt":formDataString });
+            console.log(response.data.result)
+           // generatedText.value=(response.data.result);
         } catch (error) {
-            generatedText.value=("error generating your description");
+           // generatedText.value=("error generating your description");
             console.error('Error:', error);
+        }finally{
+            onGenerate(false);
         }
-        //generatedText.value = formDataString;
+        await sleep(500);
+        const generatedTexts = document.getElementById('generatedText');
+        generatedTexts.value=(response.data.result);
+        setDisable(false)
     }
-    console.log(errors);
     const Bedroomoptions = [];
     Bedroomoptions.push(<option value="none">Select one</option>)
     for (let index = 1; index <= 10; index++) {
@@ -1197,7 +1211,7 @@ function BasicForm({onGenerate}) {
                 <div><textarea className='adtextarea' id='other-info' {...register("extra-description-of-the-property", {})} /></div>
             </div>
             <div className='submitdiv'>
-            <input className='submit-btn' type="submit" value="Generate"/>
+            <input disabled={disable} id="basic-generate" className='submit-btn' type="submit" value="Generate"/>
             </div>
             </form>
             </div>

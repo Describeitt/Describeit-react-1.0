@@ -1,0 +1,64 @@
+.flipping {
+   position: relative;
+   width: 300px;
+   height: 300px;
+   animation: flipping-pyg5ol 2s infinite linear;
+   perspective: 168px;
+}
+.Spinnerlogo{
+   width:300px;
+   height:300px;
+}
+.Spinner-parent{
+   height:100%;
+   width:100%;
+   box-sizing: border-box;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   display: flex;
+   background-color: #ecf0f1;
+   align-items: center;
+   justify-content: center;
+}
+
+.flipping:before {
+   content: '';
+   display: block;
+   width: 44.8px;
+   height: 44.8px;
+   position: absolute;
+   animation: flipping-ew9517 1s infinite;
+   background-image: url("/public/DescribeITlogo.jpeg");
+   transform-origin: bottom;
+}
+
+@keyframes flipping-pyg5ol {
+   0%, 50% {
+      transform: rotate(45deg);
+   }
+
+   50.001%, 100% {
+      transform: rotate(-45deg);
+   }
+}
+
+@keyframes flipping-ew9517 {
+   0% {
+      transform: translate(0, 0) rotateX(0deg);
+      opacity:0;
+   }
+
+   50% {
+      transform: translate(0, -100%) rotateX(0deg);
+      opacity:1;
+   }
+
+   75% {
+      transform: translate(0, -100%) rotateX(0deg);
+      opacity:1;
+   }
+
+   100% {
+      transform: translate(0, -100%) rotateX(-180deg);
+   }
+}
