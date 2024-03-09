@@ -28,9 +28,11 @@
     flex: 1 0 auto;
     margin-right: 10px;
     height:2rem;
+    padding-left:10px;
 }
 .lastname{
     flex:1 0 auto;
+    padding-left:10px;
 }
 .udclose{
     position: absolute;
@@ -48,7 +50,8 @@
     margin:0px;
     height:2rem;
     border-radius: 3px;
-    flex:1 0 98%;
+    flex:1 0 97%;
+    padding-left:10px;
 }
 .send-btn{
     width:15rem;
