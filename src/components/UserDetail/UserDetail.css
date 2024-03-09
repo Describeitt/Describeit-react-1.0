@@ -2,6 +2,7 @@
     background-color: #dfe6e9;
     padding:3rem;
     display: flex;
+    border-radius: 5px;
     align-items: center;
     position: relative;
     justify-content: center;

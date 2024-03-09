@@ -58,7 +58,7 @@ function BasicForm({onGenerate}) {
                 {/* <h2 className='Advanced-form-title'>Basic Generation Requirements</h2> */}
              <form onSubmit={handleSubmit(onSubmit)}>
             <div className='city-Dropdown'>
-                <label className='main' htmlFor='city'>1. Select the city where your property is present: <span className="star">*</span></label>
+                <label className='main' htmlFor='city'>1. Select the city where your property is present:<span className="star">*</span></label>
                 <select required {...register("city")}>
                     <option value="">Select City</option>
                     <option value="Acalanes Ridge">Acalanes Ridge</option>
