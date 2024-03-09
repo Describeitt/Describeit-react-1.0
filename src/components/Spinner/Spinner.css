@@ -2,12 +2,21 @@
    position: relative;
    width: 300px;
    height: 300px;
-   animation: flipping-pyg5ol 2s infinite linear;
+   animation: spin3D 3s ease-in-out infinite;
    perspective: 168px;
+}
+@keyframes spin3D {
+   from { transform: rotateY(0deg) }
+   to { transform: rotateY(360deg) }
+ }
+.Spinner-text{
+   color:#2c3e50;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .Spinnerlogo{
    width:300px;
    height:300px;
+   border-radius: 50%;
 }
 .Spinner-parent{
    height:100%;
@@ -32,33 +41,3 @@
    transform-origin: bottom;
 }
 
-@keyframes flipping-pyg5ol {
-   0%, 50% {
-      transform: rotate(45deg);
-   }
-
-   50.001%, 100% {
-      transform: rotate(-45deg);
-   }
-}
-
-@keyframes flipping-ew9517 {
-   0% {
-      transform: translate(0, 0) rotateX(0deg);
-      opacity:0;
-   }
-
-   50% {
-      transform: translate(0, -100%) rotateX(0deg);
-      opacity:1;
-   }
-
-   75% {
-      transform: translate(0, -100%) rotateX(0deg);
-      opacity:1;
-   }
-
-   100% {
-      transform: translate(0, -100%) rotateX(-180deg);
-   }
-}

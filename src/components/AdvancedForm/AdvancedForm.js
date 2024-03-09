@@ -56,7 +56,7 @@ function AdvancedForm({onGenerate}) {
                 {/* <h2 className='Advanced-form-title'>Advanced Generation Requirements</h2> */}
              <form onSubmit={handleSubmit(onSubmit)}>
             <div className='city-Dropdown'>
-                <label className='main' htmlFor='city'>1. Select the city where your property is present: * </label><br />
+                <label className='main' htmlFor='city'>1. Select the city where your property is present:<span className="star">*</span> </label><br />
                 <select required {...register("city")}>
                     <option value="">Select City</option>
                     <option value="Acalanes Ridge">Acalanes Ridge</option>
@@ -1185,7 +1185,7 @@ function AdvancedForm({onGenerate}) {
 </select>
             </div>
             <div className='bedrooms'>
-                <label className='main' htmlFor='bedroom'>2. Select number of bedrooms your property have: </label>
+                <label className='main' htmlFor='bedroom'>2. Select number of bedrooms your property have:<span className="star">*</span> </label>
                 <div className='options-div'>
                     <select required {...register("bedroom")}>
                         {Bedroomoptions}
@@ -1193,7 +1193,7 @@ function AdvancedForm({onGenerate}) {
                 </div>
             </div>
             <div className='bathrooms'>
-                <label className='main' htmlFor='bathroom'>3. Select number of bathrooms your property have: </label>
+                <label className='main' htmlFor='bathroom'>3. Select number of bathrooms your property have:<span className="star">*</span> </label>
                 <div className='options-div'>
                 <select required {...register("bathroom")}>
                     {Bathroomoptions}
@@ -1201,7 +1201,7 @@ function AdvancedForm({onGenerate}) {
                 </div>
             </div>
             <div className='renovations'>
-                <label className='main' htmlFor='renovation'>4. Is the property renovated? </label>
+                <label className='main' htmlFor='renovation'>4. Is the property renovated?<span className="star">*</span> </label>
                 <div className='options-div'>
                     <select required {...register("renovation")}>
                     <option value="Select one">Select one</option>
@@ -1217,7 +1217,7 @@ function AdvancedForm({onGenerate}) {
                 </div>
             </div>
             <div className='property-area'>
-                <label className='main' htmlFor='property-area'>6. What is the area of the property? (in sq ft)</label>
+                <label className='main' htmlFor='property-area'>6. What is the area of the property? (in sq ft)<span className="star">*</span></label>
                 <div className='options-div'>
                 <input required type='text' className='textboxs' id='property-area' {...register("property-area", {})} />
                 </div>

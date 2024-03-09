@@ -19,14 +19,18 @@ function UserDetail({ onSendGeneration, onCloseButton }) {
 
     return (
         <div className="userdetail-container">
+            <h2 classname="ud-text">Get Your Descriptions Mailed for Free!</h2>
             <form onSubmit={handleSubmit(handleSendGeneration)}>
                 <i className="udclose"><IoClose onClick={closeModal} size="45px"/></i>
-                <div className="names">
-                    <input required {...register("firstname")} className="namebox" type='text' placeholder='First Name'/>
-                    <input required {...register("lastname")}className="namebox" type='text' placeholder='Last Name'/>
+                <div className="ud-parent">
+                    <input required {...register("firstname")} className="firstname namebox" type='text' placeholder='First Name'/>
+                    <input required {...register("lastname")} className="lastname namebox" type='text' placeholder='Last Name'/>
+        
+                    <input {...register("email")} className='emailbox' type="email" placeholder='Enter email'/>
                 </div>
-                <div required className='email-div'><input {...register("email")} className='emailbox' type="email" placeholder='Enter email'/></div>
+                <div className='ud-btn'>
                 <input  className='send-btn' type='submit' value='Send Generation'/>
+                </div>
             </form>
         </div>
     );
