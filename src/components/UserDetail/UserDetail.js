@@ -29,7 +29,7 @@ function UserDetail({ onSendGeneration, onCloseButton }) {
                     <input {...register("email")} className='emailbox' type="email" placeholder='Enter email'/>
                 </div>
                 <div className='ud-btn'>
-                <input  className='send-btn' type='submit' value='Send Generation'/>
+                <input  className='send-btn' type='submit' value='Send Description'/>
                 </div>
             </form>
         </div>
