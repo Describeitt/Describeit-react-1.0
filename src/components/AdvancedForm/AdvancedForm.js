@@ -1213,7 +1213,7 @@ function AdvancedForm({onGenerate}) {
             <div className='year-built'>
                 <label className='main' htmlFor='year-built'>5. When was the property established/built?</label>
                 <div className='options-div'>
-                <input type='text' className='textboxs' id='year-built' {...register("year-built", {})} />
+                <input type='text' maxLength={4} className='textboxs' id='year-built' {...register("year-built", {})} />
                 </div>
             </div>
             <div className='property-area'>
@@ -1225,7 +1225,7 @@ function AdvancedForm({onGenerate}) {
             <div className='other-basic'>
                 <label className='main' htmlFor='other-info'>7. Do you have anything to tell about the property?</label>
                 <div className='options-div'>
-                <textarea className='adtextarea' id='other-info' {...register("extra-description-of-the-property", {})} />
+                <textarea className='adtextarea' maxLength={300} id='other-info' {...register("extra-description-of-the-property", {})} />
                 </div>
             </div>
             <div>
@@ -1259,13 +1259,13 @@ function AdvancedForm({onGenerate}) {
                  <input  type="checkbox" id='basketball court' placeholder="basketball court" {...register("Outdoor Space-basketball Court", {})} /><label className='option' htmlFor='basketball court'>Basketball Court</label> 
             </div>
             <div>
-                <label className='main' htmlFor='neighbourhood'>12. What is your properties Neighbourhood or Community Name?</label><br/><input className='textboxs' id='neighbourhood' type="text" {...register("neighbourhood", {})} />
+                <label className='main' htmlFor='neighbourhood'>12. What is your properties Neighbourhood or Community Name?</label><br/><input className='textboxs' id='neighbourhood' maxLength={300} type="text" {...register("neighbourhood", {})} />
             </div>
             <div>
-                <label className='main' htmlFor='proximity'>13. What is your properties proximity to schools, parks, centers and public transportation?</label><br/><input id='proximity' className='textboxs' type="text" {...register("proximity", {})} />
+                <label className='main' htmlFor='proximity'>13. What is your properties proximity to schools, parks, centers and public transportation?</label><br/><input id='proximity' maxLength={300} className='textboxs' type="text" {...register("proximity", {})} />
             </div>
             <div>
-                <label className='main' htmlFor='poa'>14. Nearest points of attraction for your property:</label><br/><input id='poa' className='textboxs' type="text" {...register("Nearest points of interest", {})} />
+                <label className='main' htmlFor='poa'>14. Nearest points of attraction for your property:</label><br/><input id='poa' className='textboxs' maxLength={300} type="text" {...register("Nearest points of interest", {})} />
             </div>
             <div className='submitdiv'>
             <input disabled={disable} className='submit-btn' type="submit" value='Generate'/>

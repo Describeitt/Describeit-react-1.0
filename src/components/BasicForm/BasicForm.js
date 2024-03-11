@@ -1208,7 +1208,7 @@ function BasicForm({onGenerate}) {
             </div>
             <div className='other-basic'>
                 <label className='main' htmlFor='other-info'>5. Do you have anything to tell about the property?</label>
-                <div><textarea className='adtextarea' id='other-info' {...register("extra-description-of-the-property", {})} /></div>
+                <div><textarea maxLength={300} className='adtextarea' id='other-info' {...register("extra-description-of-the-property", {})} /></div>
             </div>
             <div className='submitdiv'>
             <input disabled={disable} id="basic-generate" className='submit-btn' type="submit" value="Generate"/>
