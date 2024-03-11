@@ -51,14 +51,14 @@ function Navigations( { onLoadingSpinnerSet }) {
           <div>
           {advancedFormVisibility && 
       <div>
-        <div className='basic-form-modal'>
+        <div key={1} className='basic-form-modal'>
           <AdvancedForm onGenerate={onLoadingSpinnerSet} className='basic-form-render'/>
         </div>
       </div>
       }
       {basicFormVisibility &&
       <div>
-        <div className='basic-form-modal'>
+        <div key={2} className='basic-form-modal'>
         <BasicForm onGenerate={onLoadingSpinnerSet} className='basic-form-render'/>
       </div>
       </div>
