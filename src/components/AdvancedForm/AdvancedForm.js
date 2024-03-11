@@ -1,7 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import '../AdvancedForm/AdvancedForm.css'
-import { IoClose } from "react-icons/io5";
 import axios from 'axios';
 import { useState } from 'react';
 
@@ -35,13 +34,13 @@ function AdvancedForm({onGenerate}) {
         //generatedText.value = formDataString;
     }
     const Bedroomoptions = [];
-    Bedroomoptions.push(<option value="none">Select one</option>)
-    for (let index = 1; index <= 10; index++) {
+    Bedroomoptions.push(<option value="">Select one</option>)
+    for (let index = 0; index <= 10; index++) {
         Bedroomoptions.push(<option key={index} value={index}>{index}</option>);
     }
     const Bathroomoptions = [];
-    Bathroomoptions.push(<option value="none">Select one</option>)
-    for (let index = 1; index <= 10; index++) {
+    Bathroomoptions.push(<option value="">Select one</option>)
+    for (let index = 0; index <= 10; index++) {
         Bathroomoptions.push(<option key={index} value={index}>{index}</option>);
     }
 
@@ -52,7 +51,6 @@ function AdvancedForm({onGenerate}) {
                 <p className='Advanced-form-descp'>Fill up the form on the right side to generate advanced descriptions. Use the keyboard to search through the dropbox if required. The clarity of information that you provide help us to generate more detailed descriptions.</p>
             </div> */}
             <div className='formside'>
-                <i><IoClose onClick={onGenerate} size="45px"/></i>
                 {/* <h2 className='Advanced-form-title'>Advanced Generation Requirements</h2> */}
              <form onSubmit={handleSubmit(onSubmit)}>
             <div className='city-Dropdown'>
@@ -1256,9 +1254,9 @@ function AdvancedForm({onGenerate}) {
                 <label className='option' htmlFor='other-flooring'><input {...register("flooring-type")} type="radio" id='other-flooring' value="others" />Others</label><br />
             </div>
             <div className='other-flooring'>
-                <label className='main' htmlFor='other-flooring-material'>11. If you chose Others from above, mention the flooring material here.<span className="star">*</span></label>
+                <label className='main' htmlFor='other-flooring-material'>11. If you chose Others from above, mention the flooring material here.</label>
                 <div className='options-div'>
-                <input type='text' required maxLength={300} className='textboxs' id='other-flooring-material' {...register("other-special-facilities", {})} />
+                <input type='text' maxLength={300} className='textboxs' id='other-flooring-material' {...register("other-special-facilities", {})} />
                 </div>
             </div>
             <div className="outdoor-space-div">
@@ -1267,7 +1265,8 @@ function AdvancedForm({onGenerate}) {
                 <input  type="checkbox" id='balcony' placeholder="balcny" {...register("Outdoor Space-Balcony", {})} /><label className='option' htmlFor='blacony'>Balcony</label><br />
                 <input type="checkbox" id='deck' placeholder="Deck" {...register("Outdoor Space-Deck", {})} /><label className='option' htmlFor='deck'>Deck</label><br />
                 <input  type="checkbox" id='tennis court' placeholder="tennis court" {...register("Outdoor space-tennis Court", {})} /><label className='option' htmlFor='tennis court'>Tennis Court</label><br />
-                 <input  type="checkbox" id='basketball court' placeholder="basketball court" {...register("Outdoor Space-basketball Court", {})} /><label className='option' htmlFor='basketball court'>Basketball Court</label> 
+                 <input  type="checkbox" id='basketball court' placeholder="basketball court" {...register("Outdoor Space-basketball Court", {})} /><label className='option' htmlFor='basketball court'>Basketball Court</label><br/>
+                 <input  type="checkbox" id='others-space' placeholder="others" {...register("Outdoor Space-others-or-none", {})} /><label className='option' htmlFor='others-space'>Others</label> 
             </div>
             <div className='other-outdoor-spaces'>
                 <label className='main' htmlFor='other-outdoor-space'>13. If you chose Others from above, mention the outdoor spaces available.</label>

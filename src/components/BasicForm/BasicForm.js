@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import '../BasicForm/BasicForm.css';
-import { IoClose } from "react-icons/io5";
+
 import axios from 'axios';
 import { useState } from 'react';
 
@@ -37,13 +37,13 @@ function BasicForm({onGenerate}) {
         setDisable(false)
     }
     const Bedroomoptions = [];
-    Bedroomoptions.push(<option value="none">Select one</option>)
-    for (let index = 1; index <= 10; index++) {
+    Bedroomoptions.push(<option value="">Select one</option>)
+    for (let index = 0; index <= 10; index++) {
         Bedroomoptions.push(<option key={index} value={index}>{index}</option>);
     }
     const Bathroomoptions = [];
-    Bathroomoptions.push(<option value="none">Select one</option>)
-    for (let index = 1; index <= 10; index++) {
+    Bathroomoptions.push(<option value="">Select one</option>)
+    for (let index = 0; index <= 10; index++) {
         Bathroomoptions.push(<option key={index} value={index}>{index}</option>);
     }
 
@@ -54,7 +54,7 @@ function BasicForm({onGenerate}) {
                 <p className='Advanced-form-descp'>Fill up the form on the right side to generate basic descriptions. Use the keyboard to search through the dropbox if required. The clarity of information that you provide help us to generate more detailed descriptions.</p>
             </div> */}
             <div className='formsideb'>
-                <i><IoClose size="45px" onClick={onGenerate}/></i>
+                
                 {/* <h2 className='Advanced-form-title'>Basic Generation Requirements</h2> */}
              <form onSubmit={handleSubmit(onSubmit)}>
             <div className='city-Dropdown'>
@@ -1188,20 +1188,20 @@ function BasicForm({onGenerate}) {
             </div>
             <div className='bedrooms'>
                 <label className='main' htmlFor='bedroom'>2. Select number of bedrooms your property have:<span className="star">*</span></label>
-                <select required {...register("bedroom")}>
+                <select required {...register("bedroom",{ required: true })}>
                     {Bedroomoptions}
                 </select>
             </div>
             <div className='bathrooms'>
                 <label className='main' htmlFor='bathroom'>3. Select number of bathrooms your property have:<span className="star">*</span> </label>
-                <select required {...register("bathroom")}>
+                <select required {...register("bathroom",{ required: true })}>
                     {Bathroomoptions}
                 </select>
             </div>
             <div className='renovations'>
-                <label className='main' htmlFor='renovation'>4. Is the property renovated?<span className="star">*</span> </label>
-                <select required {...register("renovation")}>
-                    <option value="Select one">Select one</option>
+                <label className='main' htmlFor='renovation'>4. Is the property renovated? Select one<span className="star">*</span> </label>
+                <select required {...register("renovation",{ required: true })}>
+                    <option value="">Select one</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                     <option value="partially-renovated">Partially Renovated</option>
