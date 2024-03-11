@@ -1207,6 +1207,8 @@ function AdvancedForm({onGenerate}) {
                     <option value="Select one">Select one</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
+                    <option value="partially-renovated">Partially Renovated</option>
+                    <option value="TLC-fixer">TLC - Fixer</option>
                     </select>
                 </div>
             </div>
