@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <div className='navbar-container'>
         <div className='navbar-header'>
-            <img className='logo' src='/Describeit-full.jpeg' />
+            <img className='logo' src='/logo-desc-full.svg' />
            {/*  <h2 className='navbar-title'>Describe<span className='itnav'>It</span></h2> */}
         </div>
 

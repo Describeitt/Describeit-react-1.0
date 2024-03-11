@@ -13,7 +13,7 @@ function AdvancedForm({onGenerate}) {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = async (data) => {
         setDisable(true)
-        const prompt = "consider yourself a content generator. I am giving you a html  form's data in json form. create a beautiful description of the property based on it. I am directly going to publish your generation on my website. Do not add any extra amendities or features apart from the form data. Here is your data -> \n"
+        const prompt = "consider yourself a content generator. I am giving you a html  form's data in json form. create a beautiful description of the property based on it. I am directly going to publish your generation on my website. Do not add any extra amendities or features apart from the form data. Strictly do not add extra data or descriptions or information apart from the given data. Here is your data -> \n"
         const generatedText = document.getElementById('generatedText');
         generatedText.value = "Generating your Description ! ..."
         const formDataString = prompt+JSON.stringify(data, null, 2);
