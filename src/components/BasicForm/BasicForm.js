@@ -23,7 +23,7 @@ function BasicForm({onGenerate}) {
             
             var btn=document.getElementById("basic-generate")
             response = await axios.post('https://describeitt.onrender.com/api/describeit/', { "prompt":formDataString });
-            console.log(response.data.result)
+            //console.log(response.data.result)
            // generatedText.value=(response.data.result);
         } catch (error) {
            // generatedText.value=("error generating your description");

@@ -14,4 +14,8 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-color: transparent;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }

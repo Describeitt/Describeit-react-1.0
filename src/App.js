@@ -1,18 +1,16 @@
 import './App.css';
-import BasicForm from './components/BasicForm/BasicForm';
 import React, { useState } from 'react';
 import Generations from './components/Generations/Generations';
 import NavBar from './components/NavBar/NavBar';
 import Navigations from './components/Navigation/Navigations';
 import Footer from './components/Footer/Footer';
 import UserDetail from './components/UserDetail/UserDetail';
-import { IoClose } from "react-icons/io5";
 import axios from 'axios';
 import Spinner from './components/Spinner/Spinner';
+import { ToastContainer,toast } from 'react-toastify';
 
 function App() {
   const [opendet, setOpenDet] = useState(false)
-  const [userDetail, setUserDetail]=useState({firstName:'', lastName:''})
   const [loader,setLoader] = useState(false)
 
   const setLoading = (value) =>{
@@ -37,6 +35,22 @@ function App() {
       data['message']=prompts
       sendMail(data)
     }
+    navigator.clipboard.writeText(data['message']).then(() => 
+    {
+      toast.success('Description copied to clipboard and mailed Successfully !', {
+        position: "top-right",
+        autoClose: 9000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+        
+        });
+    }
+    )
+   // console.log("copied"+data['message'])
     
     setOpenDet(!opendet)
   };
@@ -59,8 +73,21 @@ function App() {
           {!loader && <Generations/>}
           <div className='btn-div'>
           <button className='Navi-gen-btn laptop' onClick={toggleOpenDet}>Copy</button>
+          <ToastContainer
+              position="bottom-left"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+              /><ToastContainer />
           </div>
           </div>
+          
       </div>
       <Footer />
       
