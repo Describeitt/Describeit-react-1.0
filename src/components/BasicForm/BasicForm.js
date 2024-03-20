@@ -12,16 +12,21 @@ function BasicForm({onGenerate}) {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
     const onSubmit = async (data) => {
+        const filteredFormData ={};
+        Object.keys(data).forEach((key) => {
+            if(data[key]){
+                filteredFormData[key] = data[key];
+            }
+        });
+        //console.log(filteredFormData)
         const prompt = "consider yourself a content generator. I am giving you a html  form's data in json form. create a beautiful description of the property based on it. I am directly going to publish your generation on my website. Do not add any extra amendities or features apart from the form data. Strictly do not add extra data or descriptions or information apart from the given data. Here is your data -> \n"
         const generatedText = document.getElementById('generatedText');
         generatedText.value = "Generating your Description ! ..."
-        const formDataString = prompt+JSON.stringify(data, null, 2);
+        const formDataString = prompt+JSON.stringify(filteredFormData, null, 2);
         onGenerate(true);
         var response;
         setDisable(true)
         try {
-            
-            var btn=document.getElementById("basic-generate")
             response = await axios.post('https://describeitt.onrender.com/api/describeit/', { "prompt":formDataString });
             //console.log(response.data.result)
            // generatedText.value=(response.data.result);
