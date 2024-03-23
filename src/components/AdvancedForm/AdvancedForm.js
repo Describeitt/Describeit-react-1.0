@@ -1210,7 +1210,7 @@ function AdvancedForm({onGenerate}) {
                 <label className='main' htmlFor='renovation'>4. Is the property renovated?<span className="star">*</span> </label>
                 <div className='options-div'>
                     <select required {...register("renovation")}>
-                    <option value="Select one">Select one</option>
+                    <option value="">Select one</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                     <option value="partially-renovated">Partially Renovated</option>
@@ -1225,21 +1225,27 @@ function AdvancedForm({onGenerate}) {
                 </div>
             </div>
             <div className='property-area'>
-                <label className='main' htmlFor='property-area'>6. What is the area of the property? (in sq ft)<span className="star">*</span></label>
+                <label className='main' htmlFor='property-area'>6. What is the lot size of the property? (in sq ft)<span className="star">*</span></label>
                 <div className='options-div'>
-                <input required type='text' className='textboxs' id='property-area' {...register("property-area", {})} />
+                <input required type='text' className='textboxs' id='property-area' {...register("property-lot-area-in-sqft", {})} />
+                </div>
+            </div>
+            <div className='property-area'>
+                <label className='main' htmlFor='property-area'>7. What is the living area of the property? (in sq ft)<span className="star">*</span></label>
+                <div className='options-div'>
+                <input required type='text' className='textboxs' id='property-area' {...register("property-living-area-in-sqft", {})} />
                 </div>
             </div>
             
             <div>
-                <label className='main' htmlFor='type'>7. What type best fits your property?</label><br/>
+                <label className='main' htmlFor='type'>8. What type best fits your property?</label><br/>
                 <label className='option' htmlFor='single'><input {...register("type")} id='single' type="radio" value="single-family home" />Single-family Home</label> <br/>
                 <label className='option' htmlFor='town'><input {...register("type")} id='town' type="radio" value="town home" />Town Home</label> <br/>
                 <label className='option' htmlFor='condo'><input {...register("type")} id='condo' type="radio" value="condo" />Condo</label> <br/>
                 <label className='option' htmlFor='mobile'><input {...register("type")} type="radio" id='mobile' value="mobile home" />Mobile Home</label> <br/>
             </div>
             <div>
-                <label className='main' htmlFor='special'>8. Do you have any special facilities?</label><br />
+                <label className='main' htmlFor='special'>9. Do you have any special facilities?</label><br />
                 <input type="checkbox" id='fireplace' placeholder="fireplace" {...register("Special features-fireplace", {})} /><label className='option' htmlFor='fireplace'>Fireplace</label><br />
                 <input type="checkbox" id='swim' placeholder="swimming pool" {...register("Special Features-swimming pool", {})} /><label className='option' htmlFor='swim'>Swimming Pool</label><br />
                 <input type="checkbox" id='soft' placeholder="Water Softener" {...register("Special Features-water softener", {})} /><label className='option' htmlFor='soft'>Water Softener</label><br />
@@ -1248,7 +1254,7 @@ function AdvancedForm({onGenerate}) {
                  <input type="checkbox" id='other-special' placeholder="Others/None" {...register("Special Features-none-or-other", {})} /><label className='option' htmlFor='garden'>Others</label>
             </div>
             <div className='other-special'>
-                <label className='main' htmlFor='other-special-facilities'>9. If you chose Others from above, mention the facilities here.</label>
+                <label className='main' htmlFor='other-special-facilities'>If you chose Others from above, mention the facilities here.</label>
                 <div className='options-div'>
                 <input type='text' maxLength={300} className='textboxs' id='other-special-facilities' {...register("other-special-facilities", {})} />
                 </div>
@@ -1262,13 +1268,13 @@ function AdvancedForm({onGenerate}) {
                 <label className='option' htmlFor='other-flooring'><input {...register("flooring-type")} type="radio" id='other-flooring' value="others" />Others</label><br />
             </div>
             <div className='other-flooring'>
-                <label className='main' htmlFor='other-flooring-material'>11. If you chose Others from above, mention the flooring material here.</label>
+                <label className='main' htmlFor='other-flooring-material'>If you chose Others from above, mention the flooring material here.</label>
                 <div className='options-div'>
                 <input type='text' maxLength={300} className='textboxs' id='other-flooring-material' {...register("other-special-facilities", {})} />
                 </div>
             </div>
             <div className="outdoor-space-div">
-                <label className='main' htmlFor='special'>12. Does your property have any Outdoor Space?</label><br />
+                <label className='main' htmlFor='special'>11. Does your property have any Outdoor Space?</label><br />
                 <input  type="checkbox" id='patio' placeholder="patio" {...register("Outdoor Space - Patio", {})} /><label className='option' htmlFor='patio'>Fireplace</label><br />
                 <input  type="checkbox" id='balcony' placeholder="balcny" {...register("Outdoor Space-Balcony", {})} /><label className='option' htmlFor='blacony'>Balcony</label><br />
                 <input type="checkbox" id='deck' placeholder="Deck" {...register("Outdoor Space-Deck", {})} /><label className='option' htmlFor='deck'>Deck</label><br />
@@ -1277,22 +1283,22 @@ function AdvancedForm({onGenerate}) {
                  <input  type="checkbox" id='others-space' placeholder="others" {...register("Outdoor Space-others-or-none", {})} /><label className='option' htmlFor='others-space'>Others</label> 
             </div>
             <div className='other-outdoor-spaces'>
-                <label className='main' htmlFor='other-outdoor-space'>13. If you chose Others from above, mention the outdoor spaces available.</label>
+                <label className='main' htmlFor='other-outdoor-space'>If you chose Others from above, mention the outdoor spaces available.</label>
                 <div className='options-div'>
                 <input type='text' maxLength={300} className='textboxs' id='other-outdoor-space' {...register("other-outdoor-space", {})} />
                 </div>
             </div>
             <div>
-                <label className='main' htmlFor='neighbourhood'>14. What is your properties Neighbourhood or Community Name?</label><br/><input className='textboxs' id='neighbourhood' maxLength={300} type="text" {...register("neighbourhood", {})} />
+                <label className='main' htmlFor='neighbourhood'>12. What is your properties Neighbourhood or Community Name?</label><br/><input className='textboxs' id='neighbourhood' maxLength={300} type="text" {...register("neighbourhood", {})} />
             </div>
             <div>
-                <label className='main' htmlFor='proximity'>15. What is your properties proximity to schools, parks, centers and public transportation?</label><br/><input id='proximity' maxLength={300} className='textboxs' type="text" {...register("proximity", {})} />
+                <label className='main' htmlFor='proximity'>13. What is your properties proximity to schools, parks, centers and public transportation?</label><br/><input id='proximity' maxLength={300} className='textboxs' type="text" {...register("proximity", {})} />
             </div>
             <div>
-                <label className='main' htmlFor='poa'>16. Nearest points of attraction for your property:</label><br/><input id='poa' className='textboxs' maxLength={300} type="text" {...register("Nearest points of interest", {})} />
+                <label className='main' htmlFor='poa'>14. Nearest points of attraction for your property:</label><br/><input id='poa' className='textboxs' maxLength={300} type="text" {...register("Nearest points of interest", {})} />
             </div>
             <div className='other-basic'>
-                <label className='main' htmlFor='other-info'>17. Do you have anything to tell about the property?</label>
+                <label className='main' htmlFor='other-info'>15. Do you have anything to tell about the property?</label>
                 <div className='options-div'>
                 <textarea className='adtextarea' maxLength={300} id='other-info' {...register("extra-description-of-the-property", {})} />
                 </div>
