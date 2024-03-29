@@ -27,7 +27,7 @@ function AdvancedForm({onGenerate}) {
         var response;
         onGenerate(true);
         try {
-            response = await axios.post('https://describeitt.onrender.com/api/describeit/', { "prompt":formDataString });
+            response = await axios.post('https://describeit-backend-1-0.onrender.com/api/describeit/', { "prompt":formDataString });
             generatedText.value=(response.data.result);
         } catch (error) {
             //generatedText.value=("error generating your description");
