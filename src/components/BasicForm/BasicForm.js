@@ -27,7 +27,7 @@ function BasicForm({onGenerate}) {
         var response;
         setDisable(true)
         try {
-            response = await axios.post('https://describeit-backend-1-0.onrender.com/api/describeit/', { "prompt":formDataString });
+            response = await axios.post(process.env.REACT_APP_FORM_ENDPOINT, { "prompt":formDataString });
             //console.log(response.data.result)
            // generatedText.value=(response.data.result);
         } catch (error) {
