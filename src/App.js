@@ -19,7 +19,7 @@ function App() {
   const sendMail = async (data) =>{
     //console.log(data)
     try {
-      const response = await axios.post('https://describeitt.onrender.com/api/mailer/', data);
+      const response = await axios.post('https://describeit-backend-1-0.onrender.com/api/mailer/', data);
       console.log(response.data); // Assuming the response is "ok"
     } catch (error) {
       console.error('Error:', error);
